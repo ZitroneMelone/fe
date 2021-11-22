@@ -1,0 +1,14 @@
+.NavBar{
+    background-color: lightgreen;
+    font-size: larger;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.NavItem{
+    padding: 1rem;
+    color: darkslategray;
+    text-decoration: none;
+}

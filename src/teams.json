@@ -1,0 +1,17 @@
+{
+  "data": [
+    {
+      "team": "manu",
+      "bild": "https://upload.wikimedia.org/wikipedia/de/d/da/Manchester_United_FC.svg"
+    },
+    {
+      "team": "augsburg",
+      "bild": "https://www.dfb.de/fileadmin/_processed_/201606/csm_82512-FC-Augsburg_91379074a8.jpg"
+    },
+    {
+      "team": "schalke",
+      "bild": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/FC_Schalke_04_Logo.svg/1200px-FC_Schalke_04_Logo.svg.png"
+    }
+  ]
+}
+

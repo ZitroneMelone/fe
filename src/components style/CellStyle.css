@@ -1,0 +1,53 @@
+.CellWhite{
+    display: flex;
+    border-style: solid;
+    border-color: darkslategray;
+    background-color: lightyellow ;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+}
+.CellDark{
+    display: flex;
+    border-style: solid;
+    border-color: darkslategray;
+    background-color: slategray;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+}
+
+.CellWhiteClicked{
+    display: flex;
+    border-style: solid;
+    border-color: red;
+    background-color: lightyellow ;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+}
+.CellDarkClicked{
+    display: flex;
+    border-style: solid;
+    border-color: red;
+    background-color: slategray;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+}
+
+.TeamDark{
+    font-size: larger;
+    color: black;
+}
+
+.TeamWhite{
+    font-size: larger;
+    color: coral;
+}
+
+.Board{
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}

@@ -1,11 +1,12 @@
 import React from 'react';
 
-const Index = () => {
+
+const About = () => {
     return (
         <div>
-            
+            about
         </div>
     );
 };
 
-export default Index;
+export default About;

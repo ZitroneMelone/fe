@@ -1,0 +1,83 @@
+{
+  "data": [
+    {
+      "name": "Bauer",
+      "color": false,
+      "team": false,
+      "clicked": false,
+      "turn": false,
+      "forward": 1,
+      "left": 0,
+      "right": 0,
+      "back": 0,
+      "cross": 0
+    },
+    {
+      "name": "Turm",
+      "color": false,
+      "team": false,
+      "clicked": false,
+      "turn": false,
+      "forward": 8,
+      "left": 8,
+      "right": 8,
+      "back": 8,
+      "cross": 0
+    },
+    {
+      "name": "Springer",
+      "color": false,
+      "team": false,
+      "clicked": false,
+      "turn": false,
+      "forward": 0,
+      "left": 0,
+      "right": 0,
+      "back": 0,
+      "cross": 0
+    },
+    {
+      "name": "Läufer",
+      "color": false,
+      "team": false,
+      "clicked": false,
+      "turn": false,
+      "forward": 0,
+      "left": 0,
+      "right": 0,
+      "back": 0,
+      "cross": 16
+    },
+    {
+      "name": "Königin",
+      "color": false,
+      "team": false,
+      "clicked": false,
+      "turn": false,
+      "forward": 8,
+      "left": 8,
+      "right": 8,
+      "back": 8,
+      "cross": 16
+    },
+    {
+      "name": "König",
+      "color": false,
+      "team": false,
+      "clicked": false,
+      "turn": false,
+      "forward": 1,
+      "left": 1,
+      "right": 1,
+      "back": 1,
+      "cross": 2
+    },
+    {
+      "name": "",
+      "color": false,
+      "team": false,
+      "clicked": false,
+      "turn": false
+    }
+  ]
+}
