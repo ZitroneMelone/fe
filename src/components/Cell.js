@@ -20,7 +20,7 @@ const Cell = (props) => {
 
     return (
         <button className={handleClass(props)} onClick={props.onClick}>
-            <div className={props.props.team?"TeamDark":"TeamWhite"} > {props.props.name}</div>
+            <img className={"png"} src={props.props.team ? props.props.ImgW : props.props.ImgB}/>
         </button>
     );
 };

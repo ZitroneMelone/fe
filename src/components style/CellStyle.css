@@ -39,15 +39,24 @@
 .TeamDark{
     font-size: larger;
     color: black;
+
 }
 
 .TeamWhite{
     font-size: larger;
     color: coral;
+
 }
 
 .Board{
     display: flex;
     justify-content: center;
     margin: 5px;
+}
+
+.png{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
 }

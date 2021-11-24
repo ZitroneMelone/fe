@@ -62,108 +62,75 @@ const Chess = () => {
         for (let i = 0; i < reachableBoard.length; i++) {
             reachableBoard[i] = new Array(8);
         }
-        const row = parseInt(pick[1])
-        const col = parseInt(pick[2])
         for (let i = 0; i < 8; i++) {
             for (let j = 0; j < 8; j++) {
-                if (i === row && j < col && j >= col - pick[0].forward) {
-                    reachableBoard[i][j] = "reachable"
-                }
-                if (i === row && j > col && j <= col + pick[0].back) {
-                    reachableBoard[i][j] = "reachable"
-                }
-                if (i < row && j === col && i >= row - pick[0].left) {
-                    reachableBoard[i][j] = "reachable"
-                }
-                if (i > row && j === col && i <= row + pick[0].right) {
-                    reachableBoard[i][j] = "reachable"
-                }
-                if (pick[0].cross === 16) {
-                    if (i - j === row - col) {
-                        reachableBoard[i][j] = "reachable"
-                    }
-                    if (i - row + j - col === 0) {
-                        reachableBoard[i][j] = "reachable"
-                    }
-                }
-                if (pick[0].cross === 2) {
-                    if (i - j === row - col) {
-                        if (i + j - row - col === 2 || i + j - row - col === -2) {
-                            reachableBoard[i][j] = "reachable"
-                        }
-                    }
-                    if (i - row + j - col === 0) {
-                        if (i - row === -1 && j - col === 1) {
-                            reachableBoard[i][j] = "reachable"
-                        }
-                        if (i - row === 1 && j - col === -1) {
-                            reachableBoard[i][j] = "reachable"
-                        }
-                    }
-                }
+                reachableBoard[i][j] = ""
             }
+        }
+        const count = pick[0].team?0:7
+        const countPlus = pick[0].team?1:-1
+        console.log(count)
+        console.log(countPlus)
+        const row = parseInt(pick[1])
+        const col = parseInt(pick[2])
+
+        for (let i = 0; i < pick[0].forward; i++) {
+            if(reachableBoard[row][col-1*countPlus-i*countPlus] === undefined || board[row][col-1*countPlus-i*countPlus].name != ""){
+                break
+            }
+            reachableBoard[row][col-1*countPlus-i*countPlus] = "reachable"
+        }
+        for (let i = 0; i < pick[0].back; i++) {
+            if(reachableBoard[row][col+1*countPlus+i*countPlus] === undefined || board[row][col+1*countPlus+i*countPlus].name != ""){
+                break
+            }
+            reachableBoard[row][col+1*countPlus+i*countPlus] = "reachable"
+        }
+        for (let i = 0; i < pick[0].left; i++) {
+            if(board[row-1*countPlus-i*countPlus] === undefined || board[row-1*countPlus-i*countPlus][col].name != ""){
+                break
+            }
+            reachableBoard[row-1*countPlus-i*countPlus][col] = "reachable"
+        }
+        for (let i = 0; i < pick[0].right; i++) {
+            if(board[row+1*countPlus+i*countPlus] === undefined || board[row+1*countPlus+i*countPlus][col].name != ""){
+                break
+            }
+            reachableBoard[row+1*countPlus+i*countPlus][col] = "reachable"
+        }
+        for (let i = 0; i < pick[0].cross; i++) {
+            if(board[row+1*countPlus+i*countPlus] === undefined || board[row][col+1*countPlus+i*countPlus] === undefined || board[row+1*countPlus+i*countPlus][col+1*countPlus+i*countPlus].name != ""){
+                break
+            }
+            reachableBoard[row+1*countPlus+i*countPlus][col+1*countPlus+i*countPlus] = "reachable"
+        }
+        for (let i = 0; i < pick[0].cross; i++) {
+            if(board[row-1*countPlus-i*countPlus] === undefined || board[row][col-1*countPlus-i*countPlus] === undefined || board[row-1*countPlus-i*countPlus][col-1*countPlus-i*countPlus].name != ""){
+                break
+            }
+            reachableBoard[row-1*countPlus-i*countPlus][col-1*countPlus-i*countPlus] = "reachable"
+        }
+        for (let i = 0; i < pick[0].cross; i++) {
+            if(board[row+1*countPlus+i*countPlus] === undefined || board[row][col-1*countPlus-i*countPlus] === undefined || board[row+1*countPlus+i*countPlus][col-1*countPlus-i*countPlus].name != ""){
+                break
+            }
+            reachableBoard[row+1*countPlus+i*countPlus][col-1*countPlus-i*countPlus] = "reachable"
+        }
+        for (let i = 0; i < pick[0].cross; i++) {
+            if(board[row-1*countPlus-i*countPlus] === undefined || board[row][col+1*countPlus+i*countPlus] === undefined || board[row-1*countPlus-i*countPlus][col+1*countPlus+i*countPlus].name != ""){
+                break
+            }
+            reachableBoard[row-1*countPlus-i*countPlus][col+1*countPlus+i*countPlus] = "reachable"
         }
 
         return reachableBoard
     }
 
-    // Figuren springen über andere Figuren
-
-    function checkRechableWhite() {
-        let reachableBoard = new Array(8);
-
-        for (let i = 0; i < reachableBoard.length; i++) {
-            reachableBoard[i] = new Array(8);
-        }
-        const row = parseInt(pick[1])
-        const col = parseInt(pick[2])
-        for (let i = 0; i < 8; i++) {
-            for (let j = 0; j < 8; j++) {
-                if (i === row && j > col && j <= col + pick[0].forward) {
-                    reachableBoard[i][j] = "reachable"
-                }
-                if (i === row && j < col && j >= col - pick[0].back) {
-                    reachableBoard[i][j] = "reachable"
-                }
-                if (i > row && j === col && i <= row + pick[0].left) {
-                    reachableBoard[i][j] = "reachable"
-                }
-                if (i < row && j === col && i >= row - pick[0].right) {
-                    reachableBoard[i][j] = "reachable"
-                }
-                if (pick[0].cross === 16) {
-                    if (i - j === row - col) {
-                        reachableBoard[i][j] = "reachable"
-                    }
-                    if (i - row + j - col === 0) {
-                        reachableBoard[i][j] = "reachable"
-                    }
-                }
-                if (pick[0].cross === 2) {
-                    if (i - j === row - col) {
-                        if (i + j - row - col === 2 || i + j - row - col === -2) {
-                            reachableBoard[i][j] = "reachable"
-                        }
-                    }
-                    if (i - row + j - col === 0) {
-                        if (i - row === -1 && j - col === 1) {
-                            reachableBoard[i][j] = "reachable"
-                        }
-                        if (i - row === 1 && j - col === -1) {
-                            reachableBoard[i][j] = "reachable"
-                        }
-                    }
-                }
-            }
-        }
-
-        return reachableBoard
-    }
 
     function handleClick(row, col) {
         let newArray = [...board]
         if (pick && newArray[row][col].name === "") {
-            const reachableBoard = pick[0].team?checkRechable():checkRechableWhite()
+            const reachableBoard = checkRechable()
             if (reachableBoard[row][col] == "reachable") {
                 const movedPiece = {...pick[0]}
                 movedPiece.color = newArray[row][col].color

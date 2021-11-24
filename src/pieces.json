@@ -10,7 +10,9 @@
       "left": 0,
       "right": 0,
       "back": 0,
-      "cross": 0
+      "cross": 0,
+      "ImgB": "/piecesPng/Chess_black_pawn.png",
+      "ImgW": "/piecesPng/Chess_White_pawn.png"
     },
     {
       "name": "Turm",
@@ -22,7 +24,9 @@
       "left": 8,
       "right": 8,
       "back": 8,
-      "cross": 0
+      "cross": 0,
+      "ImgB": "/piecesPng/Chess_black_Woter.png",
+      "ImgW": "/piecesPng/Chess_white_tower.png"
     },
     {
       "name": "Springer",
@@ -34,7 +38,9 @@
       "left": 0,
       "right": 0,
       "back": 0,
-      "cross": 0
+      "cross": 0,
+      "ImgB": "/piecesPng/Chess_black_jumper.png",
+      "ImgW": "/piecesPng/Chess_white_Jumper.png"
     },
     {
       "name": "Läufer",
@@ -46,7 +52,9 @@
       "left": 0,
       "right": 0,
       "back": 0,
-      "cross": 16
+      "cross": 16,
+      "ImgB": "/piecesPng/Chess_black_Laufer.png",
+      "ImgW": "/piecesPng/Chess_white_Laufer.png"
     },
     {
       "name": "Königin",
@@ -58,7 +66,9 @@
       "left": 8,
       "right": 8,
       "back": 8,
-      "cross": 16
+      "cross": 8,
+      "ImgB": "/piecesPng/Chess_black_queen.png",
+      "ImgW": "/piecesPng/Chess_White_Queen.png"
     },
     {
       "name": "König",
@@ -70,14 +80,18 @@
       "left": 1,
       "right": 1,
       "back": 1,
-      "cross": 2
+      "cross": 1,
+      "ImgB": "/piecesPng/Chess_black_king.png",
+      "ImgW": "/piecesPng/Chess_White_king.png"
     },
     {
       "name": "",
       "color": false,
       "team": false,
       "clicked": false,
-      "turn": false
+      "turn": false,
+      "ImgB": "",
+      "ImgW": ""
     }
   ]
 }
